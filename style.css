@@ -258,6 +258,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 1%;
     /* margin-bottom: 10px; */
 }
 
@@ -308,7 +309,27 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+.message-icon {
+    position: relative;
+    display: inline-block;
+    color: #00BFA5; /* Green color for the icon */
+  }
+  
+  .message-icon .fas.fa-comment-alt {
+    font-size: 24px;
+  }
+  
+  .message-icon .message-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #E53935; /* Red color for the count */
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 50%;
+  }
 /* Modal styling */
 .share-modal {
     background: #fff;
@@ -317,6 +338,8 @@ body {
     border-radius: 8px;
     position: relative;
     text-align: center;
+    overlay: 15px;
+    /* position: fixed; */
 }
 
 /* Dismiss button */
@@ -326,12 +349,14 @@ body {
     right: 10px;
     cursor: pointer;
     font-size: 18px;
+    background: none;
 }
 
 /* Share options styling */
 .share-options {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
     margin-top: 20px;
 }
 
@@ -339,7 +364,14 @@ body {
     cursor: pointer;
     font-size: 24px;
 }
-
+.s1,.s2{
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+.message-icon{
+    padding-top: 2px;
+}
 /* Copy link styling */
 .copy-link {
     display: inline-block;
@@ -355,7 +387,7 @@ body {
     color: red;
 }
 
-.share-btn, #saveButton2 {
+.share-btn2, #saveButton2 {
     padding: 8px 16px;
     border-radius: 20px;
     border: 1px solid #e6e6e6;
@@ -367,7 +399,7 @@ body {
     font-size: 14px;
 }
 
-.share-btn:before {
+.share-btn2:before {
     content: '\1F4E4'; /* Unicode share icon */
 }
 
@@ -382,7 +414,7 @@ body {
 /* save button interaction */
 
 /* end of save button */
-.share-btn:hover {
+.share-btn2:hover {
     background: none;
 }
 
@@ -685,7 +717,7 @@ gallery-container {
      /* max-width: 1200px; */
      display: flex;
     margin-left: 0;
-     /* justify-content:space-between; */
+     justify-content:space-around;
  }
  /* hero-left */
  /* .hero-left{
@@ -786,11 +818,12 @@ gallery-container {
     gap: 10px;
 }
  
-.after-explore .locations{
-    display: flex;
-    flex-direction: column;
+/* .after-explore .locations{
+    display: grid;
+    grid-template-columns: 1fr;
     padding-top: 10px;
-}
+} */
+
  .location-map {
      width: 300px;
      height: 200px;
@@ -798,19 +831,23 @@ gallery-container {
      border-radius: 12px;
      margin-bottom: 16px;
  }
-
+.ll{
+    display: flex;
+    flex-direction: column;
+}
  .location-list {
      list-style: none;
      display: flex;
-     flex-direction: column;
+   flex-direction: column;
      align-items: center;
- }
+     margin: 10px 2px 0 10px;
+ } 
 
  .location-item {
      display: flex;
      align-items: center;
      justify-content: center;
-     gap: 10px;
+     gap: 20px;
      margin-bottom: 12px;
  }
 
@@ -1055,11 +1092,17 @@ hr{
     align-items: center;
     margin-bottom: 10px;
     color: #535252;
-    /* background: none; */
+    background: none;
+}
+.traveler-type{
+    background: none;
+
 }
 .counter-subtitle{
     font-size: small;
     opacity: .7;
+    background: none;
+
 }
 
 .counter-controls {
@@ -1118,6 +1161,8 @@ hr{
     color: #535252;
     opacity: 0.6;
     transition: opacity 0.3s;
+    background: none;
+
 }
 
 .pet-option input[type="checkbox"] {
@@ -1190,39 +1235,45 @@ hr{
     overflow: hidden;
     background: #fff;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: relative;
-}
-
-.map-preview .map-image {
+  }
+  
+  .map-preview .map-image {
     width: 100%;
     position: relative;
-}
-
-.map-preview .map-image img {
+  }
+  
+  .map-preview .map-image img {
     width: 100%;
     height: 200px;
     object-fit: cover;
     display: block;
-}
-
-.map-preview .map-info {
-    padding: 16px;
-    background-color: white;
-}
-
-.map-preview .location-name {
-    font-size: 14px;
+  }
+  
+  #mapInfo {
+    position: absolute;
+    /* bottom: 0; */
+    /* top: 80%; */
+    margin-top: -20px;
+    background-color: rgb(255, 250, 250);
+    width: 300px;
+    padding: 8px 16px;
+    height: 60px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  
+  .map-preview .location-name {
     color: #222;
-    margin-bottom: 4px;
     font-weight: 500;
-}
-
-.map-preview .view-map-link {
-    font-size: 14px;
+    background: none;
+  }
+  
+  .map-preview .view-map-link {
     color: #006AFF;
     text-decoration: underline;
     cursor: pointer;
-}
+    background: none;
+  }
 /* 
 ----------------------------
  */
@@ -1473,8 +1524,8 @@ hr{
     
 }
 
-.highlights-list,
-.location-list {
+.highlights-list
+{
     list-style: none;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1483,8 +1534,8 @@ hr{
     justify-content: center;
 }
 
-.highlight-item,
-.location-item {
+.highlight-item
+{
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1594,25 +1645,28 @@ hr{
 
 /* have a qs */
 .search-container {
-    background-color: #a4b9cf;
+    background-color: #b0c5db;
     display: flex;
     flex-direction: column;
+    justify-content: start;
     border-radius: 8px;
     padding: 24px;
     margin: 32px;
     color: #535252;
+    width: 80%;
+    /* align-items: center; */
 
   }
   
   .search-container .div1{
     color: #535252;
     font-weight: 600;
-    background-color: #a4b9cf;
+    background:none;
     font-size: x-large;
 
   }
   .search-container .div2, .search-container .div3{
-    background-color: #a4b9cf;
+    background:none;
     color: #535252;
   }
   .div3-div1{
@@ -1644,22 +1698,31 @@ hr{
   .div3-11,.div3-div2{
     font-size: xx-large;
     color: #535252;
-
-  }
-.div3-12{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #535252;
-
-}
-.div3-div1,.div3-div2{
     background: none;
 
-    color: #535252;
+  }
+  .div3-div1,.div3-div2{
+      background: none;
+      
+      color: #535252;
+      
+    }
+ 
+    .div3-12{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #535252;
+        background: none;
+        
+    } 
+    .div122,.div121{
+        background: none;
+    }
+    #div121bold{
+    font-weight: 700;
 
 }
-
 
 /* house rules */
 .house-rules {
@@ -1745,7 +1808,7 @@ hr{
 }
 
 .timeline-wrapper {
-    background-color: #f8f8f8;
+    background:none;
     padding: 30px;
     border-radius: 12px;
 }
@@ -1952,6 +2015,7 @@ hr{
     width: 60%;
     position: relative;
     overflow: hidden;
+    
 }
 
 .review {
@@ -1959,10 +2023,12 @@ hr{
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #1A1A1D;
     display: none;
 }
-
+.review h3,.review p,.review p strong{
+    background: none;
+}
 #review1:checked ~ #slide1,
 #review2:checked ~ #slide2,
 #review3:checked ~ #slide3,
@@ -1977,22 +2043,31 @@ hr{
     bottom: 0px;
     /* width: 100%; */
     display: flex;
+    gap: 100%;
     height: 15px;
     justify-content: space-between;
     transform: translateY(-50%);
+     background: none;
+     padding: 0 5px;
+   /* border-radius: 50%; */
 }
 
 .controls label {
     font-size: 10px;
     cursor: pointer;
-    color: #007bff;
-    padding: 0 15px;
+    /* color: #007bff; */
+    height: 1%;
     opacity: 0.4;
+    color: #e1e1f0;
+    border-radius: 50%;
+    background: #807e7e;
+
+    
 }
 
 .view-all {
-    text-align: right;
-    margin-top: 10px;
+    /* text-align: right; */
+    margin-top: 15px;
     margin-left: 0;
 }
 
@@ -2008,8 +2083,23 @@ hr{
 .view-and-slider{
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    /* justify-content: start; */
 }
+.review:hover {
+    transform: scale(1.09); /* Doubles the size on hover */
+    font-size: normal;
+    
+        border-radius: 25px;
+        margin-top: 20px;
+       
+    
+
+}
+
+/* ---------------- */
+
+
+/* ------------ */
 
 /* important info */
 .important-info-container {
@@ -2128,7 +2218,9 @@ hr{
     line-height: 1.4;
     flex: 1;
 }
-
+.div3-div1 i,.div3-div2 i{
+    background:  none;
+}
 /* Hover states */
 .faq-item:hover .faq-question {
     text-decoration: underline;

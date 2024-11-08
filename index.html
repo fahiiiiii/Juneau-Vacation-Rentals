@@ -143,14 +143,14 @@
                     <!-- share button -->
                     <button class="share-btn2" onclick="showShareView()">Share</button>
 
-    <!-- Overlay for the share view -->
-    <div class="overlay" id="shareOverlay">
-        <div class="share-modal">
-            <span class="close-share-btn" onclick="dismissShareView()">×</span>
-            <h2>Share</h2>
-            <div id="shareContent"></div>
-        </div>
-    </div>
+                    <!-- Overlay for the share view -->
+                    <div class="overlay" id="shareOverlay">
+                        <div class="share-modal">
+                            <span class="close-share-btn" onclick="dismissShareView()">×</span>
+                            <h2>Share</h2>
+                            <div id="shareContent"></div>
+                        </div>
+                    </div>
 
                     <!-- save button -->
                     <button id="saveButton2">
@@ -190,24 +190,15 @@
                             <div class="photo-count">30+</div>
                         </div>
 
-                        <!-- <div class="modal gallery-modal" id="galleryModal">
-                            <div class="modal-content-gallery">
-                                <span class="close" onclick="closeModal()">&times;</span>
-                                <button class="prev" id="prevButton" onclick="prevImage()">&#10094;</button>
-                                <button class="next" id="nextButton" onclick="nextImage()">&#10095;</button>
-                                <img id="modalImage" src="" alt="Gallery Image">
-                                <div class="modal-title" id="modalTitle">Juneau Vacation Rental | 2BR | 1BA | 1,115 Sq
-                                    Ft | Stairs Required</div>
-                                <div class="image-counter" id="imageCounter">1/31</div>
-                            </div>
-                        </div> -->
+                        
                         <div class="modal gallery-modal" id="galleryModal">
                             <div class="modal-content-gallery">
                                 <span class="close close-gallery" onclick="closeModal()">&times;</span>
                                 <button class="prev" id="prevButton" onclick="prevImage()">&#10094;</button>
                                 <button class="next" id="nextButton" onclick="nextImage()">&#10095;</button>
                                 <img id="modalImage" src="" alt="Gallery Image">
-                                <div class="modal-title" id="modalTitle">Juneau Vacation Rental | 2BR | 1BA | 1,115 Sq Ft | Stairs Required</div>
+                                <div class="modal-title" id="modalTitle">Juneau Vacation Rental | 2BR | 1BA | 1,115 Sq
+                                    Ft | Stairs Required</div>
                                 <div class="image-counter" id="imageCounter">1/31</div>
                             </div>
                         </div>
@@ -307,39 +298,44 @@
                                             </span>
                                         </div>
                                     </div>
-                                    <div class="map-info">
+                                    <div class="map-info" id="mapInfo">
                                         <p class="location-name">Juneau, Alaska</p>
-                                        <a href="#" class="view-map-link">View in a map</a>
+                                       <a href="#" class="view-map-link">View in a map</a>
                                     </div>
                                 </div>
                             </div>
                             <!-- <div class="location">Juneau, Alaska</div> -->
                             <div class="locations">
                                 <div class="location-list">
-                                    <ldiv class="location-item">
-                                        <span class="detail-icon"><i class='bx bx-current-location'></i></span>
-                                        <span>Auke Bay</span>
-                                        <span class="distance">5 min drive</span>
-                                </div>
-                                <div class="location-item">
-                                    <span class="detail-icon"><i class='bx bx-current-location'></i>
-                                    </span>
-                                    <span>University of Alaska Southeast</span>
-                                    <span class="distance">10 min drive</span>
-                                </div>
-                                <div class="location-item">
-                                    <span class="detail-icon"><i class='bx bx-current-location'></i></span>
-                                    <span>Mendenhall Golf Course</span>
-                                    <span class="distance">14 min drive</span>
-                                </div>
-                                <div class="location-item">
-                                    <span class="detail-icon">✈️</span>
-                                    <span>Juneau, AK (JNU-Juneau Intl.)</span>
-                                    <span class="distance">14 min drive</span>
+                                    <div class="ll-div1 ll">
+                                        <div class="location-item">
+                                            <span class="detail-icon"><i class='bx bx-current-location'></i></span>
+                                            <span>Auke Bay</span>
+                                            <span class="distance">5 min drive</span>
+                                        </div>
+                                        <div class="location-item">
+                                            <span class="detail-icon"><i class='bx bx-current-location'></i>
+                                            </span>
+                                            <span>University of Alaska Southeast</span>
+                                            <span class="distance">10 min drive</span>
+                                        </div>
+                                    </div>
+                                    <div class="ll-div2 ll">
+                                        <div class="location-item">
+                                            <span class="detail-icon"><i class='bx bx-current-location'></i></span>
+                                            <span>Mendenhall Golf Course</span>
+                                            <span class="distance">14 min drive</span>
+                                        </div>
+                                        <div class="location-item">
+                                            <span class="detail-icon">✈️</span>
+                                            <span>Juneau, AK (JNU-Juneau Intl.)</span>
+                                            <span class="distance">14 min drive</span>
+                                        </div>
+                                        <div><a href="#" class="see-all-link">See more about this area ›</a></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div><a href="#" class="see-all-link">See more about this area ›</a></div>
                     </div>
                 </div>
             </div>
@@ -403,7 +399,7 @@
                             <!-- Travelers dropdown -->
                             <div class="travelers-dropdown" id="travelersDropdown">
                                 <div class="counter-row">
-                                    <div> Adults </div>
+                                    <div class="traveler-type"> Adults </div>
                                     <div class="counter-controls">
                                         <button class="decrement" id="adult-decrement" onclick="decrementAdults()"
                                             disabled>-</button>
@@ -412,7 +408,7 @@
                                     </div>
                                 </div>
                                 <div class="counter-row">
-                                    <div> Children
+                                    <div class="traveler-type"> Children
                                         <div class="counter-subtitle">Ages 0 to 17</div>
                                     </div>
                                     <div class="counter-controls">
@@ -454,7 +450,6 @@
                         <hr>
                     </div>
                 </div>
-
                 <div class="property-id"><strong class="div4">Property # </strong>9838104ha</div>
             </div>
         </div>
@@ -687,7 +682,7 @@
                         <i class='bx bx-search-alt-2'></i>
                     </div>
                     <div class="div3-12">
-                        <div class="div121">Ask a question</div>
+                        <div class="div121" id="div121bold">Ask a question</div>
                         <div class="div122">Is there any parking?</div>
                     </div>
                 </div>
@@ -946,11 +941,11 @@
 
                 <!-- Navigation controls -->
                 <div class="controls">
-                    <label for="review1">&#10094;</label>
-                    <label for="review2">&#10095;</label>
-                    <label for="review3">&#10095;</label>
-                    <label for="review4">&#10095;</label>
-                    <label for="review5">&#10095;</label>
+                    <label for="review1" class="lbl-arrow">&#10094;</label>
+                    <!-- <label for="review2" class="lbl-arrow">&#10095;</label>
+                    <label for="review3" class="lbl-arrow">&#10095;</label>
+                    <label for="review4" class="lbl-arrow">&#10095;</label> -->
+                    <label for="review5" class="lbl-arrow">&#10095;</label>
                 </div>
             </div>
 
