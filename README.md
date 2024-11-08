@@ -1,6 +1,6 @@
 # Juneau Vacation Home Listing Website
 
-A responsive website to showcase a vacation rental property with beautiful views and direct beach access in Juneau, Alaska. Built using HTML5 and CSS3, it highlights property details, amenities, nearby attractions, and provides a booking interface with pricing and availability.
+A responsive and interactive website to showcase a vacation rental property with beautiful views and direct beach access in Juneau, Alaska. Built using HTML5 , CSS3 and javaScript, it highlights property details, amenities, nearby attractions, and provides a booking interface with pricing and availability.
 
 ## Table of Contents
 
@@ -8,12 +8,11 @@ A responsive website to showcase a vacation rental property with beautiful views
 - [Features](#features)
 - [Technologies Used](#technologies-used)
 - [Setup](#setup)
-- [Folder Structure](#folder-structure)
 - [Credits](#credits)
 
 ## Demo
 
-Check out the website demo [here](https://github.com/fahiiiiii/juneau-vacation-home-listing).
+Check out the website demo [here](https://fahiiiiii.github.io/Juneau-Vacation-Rentals/).
 
 ## Features
 
@@ -30,6 +29,7 @@ Check out the website demo [here](https://github.com/fahiiiiii/juneau-vacation-h
 - **HTML5**: Structures the content and layout of the website.
 - **CSS3**: Customizes the visual styling, typography, layout adjustments, and responsiveness of the website.
 - **Responsive Design**: CSS media queries ensure the site is optimized for mobile and desktop screens.
+- **JavaScript**: Adds interactivity and dynamic functionality, such as the modal windows, date selection, and review carousel.
 
 ## Setup
 
@@ -43,19 +43,11 @@ Check out the website demo [here](https://github.com/fahiiiiii/juneau-vacation-h
     Open index.html in your browser:
 
 open index.html
-Folder Structure
 
-juneau-vacation-home-listing/
-├── index.html            # HTML structure and content for the webpage
-├── css/
-│   └── style.css         # CSS file for styling and responsiveness
-├── images/
-│   ├── gallery/          # Property and gallery images
-└── README.md             # Project documentation
 
 Credits
 Images: Placeholder images from free stock resources. Replace these with actual images for the live site.
-Icons: Boxicons and Google Material Icons used for symbols in navigation and amenity listings.
+Icons: Boxicons, Google Material Icons, and Font Awesome used for symbols in navigation, amenity listings, and other UI elements.
 
 
 
